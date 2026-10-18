@@ -130,9 +130,13 @@
   }
 
   function openProvider(provider) {
-    const opened = window.open(provider.url, '_blank', 'noopener,noreferrer');
-    if (!opened) showToast('O navegador bloqueou a nova aba. Permita pop-ups para abrir o serviço.', true);
-    else showToast(`${provider.name} aberto em uma nova aba. Seus dados não foram enviados.`);
+    try {
+      window.open(provider.url, '_blank', 'noopener,noreferrer');
+      showToast(`Abrindo ${provider.name} no navegador. Seus dados não foram enviados.`);
+    } catch (error) {
+      console.error(`Não foi possível abrir ${provider.name}.`, error);
+      showToast(`Não foi possível abrir ${provider.name}. Verifique as permissões de pop-up do aplicativo.`, true);
+    }
   }
 
   function renderCategories() {

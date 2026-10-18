@@ -2,9 +2,15 @@
 
 Um protótipo local de estúdio para planejar vídeos de YouTube, reunir briefings de IA, organizar cenas e preparar materiais para edição.
 
-## Executar
+## Executar no navegador
 
 Abra `index.html` em um navegador moderno. Não há instalação de dependências, servidor ou conta necessária. Para testar o salvamento, permita armazenamento local para arquivos locais no navegador.
+
+## Aplicativo Windows
+
+Instale o Node.js LTS e execute `npm install` e `npm start` para abrir o Frame Studio em uma janela de desktop.
+
+Para gerar o executável portátil Windows x64, execute `npm run dist:win`. O arquivo será criado em `release/Frame-Studio-1.0.0-Windows-x64.exe`. Não é necessário instalar o Node.js para executar o `.exe`.
 
 ## O que funciona
 
